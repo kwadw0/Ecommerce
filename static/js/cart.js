@@ -1,5 +1,8 @@
-
+// selecting items
 var updateBtns = document.getElementsByClassName('update-cart')
+
+
+
 
 for(var i = 0; i < updateBtns.length; i++){
     updateBtns[i].addEventListener('click', function(){
@@ -41,7 +44,7 @@ function addCookieItem(productId, action){
     console.log('Cart:', cart)
     document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
 
-    location.reload()
+    window.location.reload()
 }
 
 function updateUserOrder(productId, action){
@@ -64,7 +67,7 @@ function updateUserOrder(productId, action){
     })
 
     .then((data) => {
-        location.reload()
+        window.location.reload();
     });
 
 }
