@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+# imported 
 from django.http import JsonResponse
 import json
 import datetime
@@ -6,7 +8,9 @@ from .models import *
 from .utils import cartData, guestOrder, cookieCart
 
 
+# Create your views here.
 
+# store 
 def store(request):
     data = cartData(request)
     cartItems = data['cartItems']
@@ -15,7 +19,7 @@ def store(request):
 
     context = {'products': products, 'cartItems': cartItems}
     return render(request, 'store.html', context)
-
+# cart
 def cart(request):
     data = cartData(request)
 
@@ -26,7 +30,7 @@ def cart(request):
     context = {'items': items, 'order': order, 'cartItems': cartItems}
     return render(request, 'cart.html', context)
 
-
+# checkout 
 def checkout(request):
     data = cartData(request)
 
@@ -37,7 +41,7 @@ def checkout(request):
     context = {'items': items, 'order': order, 'cartItems': cartItems}
     return render(request, 'checkout.html', context)
 
-
+# updateItem
 def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']
@@ -64,7 +68,7 @@ def updateItem(request):
 
     return JsonResponse('Item was added', safe=False)
 
-
+# processOrder
 def processOrder(request):
     print('Data:', request.body)
     transaction_id = datetime.datetime.now().timestamp()
@@ -83,7 +87,6 @@ def processOrder(request):
     if total == float(order.get_cart_total):
         order.completed = True
     order.save()
-
     if order.shipping == True:
         ShippingAddress.objects.create(
             customer=customer,
@@ -93,11 +96,6 @@ def processOrder(request):
             state=data['shipping']['state'],
             zipcode=data['shipping']['zipcode'],
         )
-    return JsonResponse('Payment submitted...', safe=False)
+    return JsonResponse('Payment submitted..', safe=False)
 
 
-
-
-
-
-# Create your views here.
