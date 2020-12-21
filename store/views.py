@@ -9,6 +9,11 @@ from .utils import cartData, guestOrder, cookieCart
 
 
 # Create your views here.
+def login(request):
+    return render(request, 'login.html', {login:'login'})
+
+def signUp(request):
+    return render(request, 'signUp.html', {signUp:'signUp'})
 
 # store 
 def store(request):
