@@ -51,6 +51,21 @@
                 console.log('Cart:', cart)
                 
     </script>
+    <style>
+        .hello_msg{
+            font-size: 18px;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-right: 20px;
+            
+            color: #FFFF00;
+        }
+        #search_pos{
+            margin-left: 90px;
+        }
+        #search_but{
+            margin-left: 90px;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,8 +90,12 @@
 
 
         <div class="form-inline my-2 my-lg-0">
+            {% if request.user.customer %}
+            <span class="hello_msg"> Welcome {{ request.user.username}}</span>
+            <a  href="{% url 'logout'%}" class="btn btn-warning" style="margin:5px">Logout</a>
+            {% else %}
             <a href="{% url 'login' %}" class="btn btn-warning" style="margin:5px">Login</a>
-
+            {% endif %}
             <a href="{% url 'cart' %}">
                 <img id="cart-icon" src="{% static 'images/cart.png' %}">
             </a>

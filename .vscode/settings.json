@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\KwadwoAsani\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+    "python.pythonPath": "venv/bin/python",
     "intelephense.files.associations": [
     
         "*.php",
