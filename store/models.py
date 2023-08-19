@@ -1,14 +1,15 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+from accounts.models import CustomUser
 
-class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200, null=True)
+# class Customer(models.Model):
+#     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, null=True)
+#     name = models.CharField(max_length=200, null=True)
+#     email = models.CharField(max_length=200, null=True)
 
-    def __str__(self):
-        return self.name
-
+#     def __str__(self):
+#         return self.name
+Customer = get_user_model()
 
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
