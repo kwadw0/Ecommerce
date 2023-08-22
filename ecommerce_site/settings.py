@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
 
-    'accounts'
+    'accounts',
+    'compressor'
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -117,6 +118,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+COMPRESS_ROOT = BASE_DIR / 'static'
+
+COMPRESS_ENABLED = True
+
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
 
 STATIC_URL = '/static/'
 
