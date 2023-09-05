@@ -41,7 +41,6 @@ RUN npm install flowbite
 COPY . .
 
 
-
 # Expose the port
 EXPOSE 8000
 

@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_admin_tailwind',
     'store.apps.StoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -116,6 +117,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+
+STATIC_URL = '/static/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 COMPRESS_ROOT = BASE_DIR / 'static'
@@ -125,7 +129,6 @@ COMPRESS_ENABLED = True
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 
-STATIC_URL = '/static/'
 
 # we can also use  BASE_DIR / "STATIC"
 
@@ -133,6 +136,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
-
-
-

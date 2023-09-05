@@ -2,6 +2,104 @@
 {% load static %}
 {% block content %}
 
+<div class="container mx-auto p-4 md:p-6">
+	<h1 class="text-2xl font-semibold mb-6">Checkout</h1>
+	<div class="flex flex-col md:flex-row gap-4">
+		
+		<!-- User Information Form -->
+		<div class="bg-white rounded-lg shadow-md p-4 md:p-6 flex-1">
+			<form>
+				{% csrf_token %}
+				<div class="relative z-0 w-full mb-6 group">
+					<input type="email" name="floating_email" id="floating_email"
+						class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+						placeholder=" " required />
+					<label for="floating_email"
+						class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+						address</label>
+				</div>
+				<div class="relative z-0 w-full mb-6 group">
+					<input type="password" name="floating_password" id="floating_password"
+						class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+						placeholder=" " required />
+					<label for="floating_password"
+						class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+				</div>
+				<div class="relative z-0 w-full mb-6 group">
+					<input type="password" name="repeat_password" id="floating_repeat_password"
+						class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+						placeholder=" " required />
+					<label for="floating_repeat_password"
+						class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+						password</label>
+				</div>
+				<div class="grid md:grid-cols-2 md:gap-6">
+					<div class="relative z-0 w-full mb-6 group">
+						<input type="text" name="floating_first_name" id="floating_first_name"
+							class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							placeholder=" " required />
+						<label for="floating_first_name"
+							class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+							name</label>
+					</div>
+					<div class="relative z-0 w-full mb-6 group">
+						<input type="text" name="floating_last_name" id="floating_last_name"
+							class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							placeholder=" " required />
+						<label for="floating_last_name"
+							class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+							name</label>
+					</div>
+				</div>
+				<div class="grid md:grid-cols-2 md:gap-6">
+					<div class="relative z-0 w-full mb-6 group">
+						<input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone"
+							class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							placeholder=" " required />
+						<label for="floating_phone"
+							class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+							number (123-456-7890)</label>
+					</div>
+					<div class="relative z-0 w-full mb-6 group">
+						<input type="text" name="floating_company" id="floating_company"
+							class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							placeholder=" " required />
+						<label for="floating_company"
+							class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company
+							(Ex. Google)</label>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	<!-- Order Summary Card -->
+	
+	<div class="bg-white shadow-md rounded p-4 md:p-6 w-full md:w-80">
+		<h2 class="text-lg font-semibold mb-4">Order Summary</h2>
+		{% for item in items %}
+		<div class="flex mb-4">
+			<img src="{{item.product.imageURL}}" alt="Item" class="w-20 h-20 object-cover rounded">
+			<div class="ml-4">
+				<p class="font-semibold">{{item.product.name}}</p>
+				<p class="text-gray-600">${{item.product.price}}</p>
+			</div>
+		</div>
+		<hr class="my-4">
+		{% endfor %}
+		<div class="flex justify-between">
+			<span class="font-semibold">Total:</span>
+			<span class="font-semibold">${{order.get_cart_total|floatformat:2 }}</span>
+		</div>
+		
+	</div>
+	</div>
+	<!-- Checkout Button -->
+	<button
+		class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">
+		Checkout
+	</button>
+</div>
+<!-- 
 <div class="row">
 	<div class="col-lg-6">
 		<div class="box-element" id="form-wrapper">
@@ -72,23 +170,23 @@
 
 		</div>
 	</div>
-</div>
+</div> -->
 
 <script type="text/javascript">
 	var shipping = '{{order.shipping}}'
 	var total = '{{order.get_cart_total|floatformat}}'
 
-	if(shipping == 'False'){
+	if (shipping == 'False') {
 		document.getElementById('shipping-info').innerHTML = ''
 	}
 
 
-	if(user != 'AnonymousUser'){
+	if (user != 'AnonymousUser') {
 		document.getElementById('user-info').innerHTML = ''
 	}
 
 
-	if(shipping == 'False' && user != 'AnonymousUser'){
+	if (shipping == 'False' && user != 'AnonymousUser') {
 		//hide entire form if user is logged in and shipping is false
 		document.getElementById('form-wrapper').classList.add('hidden');
 		//show payment if logged in user wants to buy an item
@@ -102,41 +200,41 @@
 	csrftoken = form.getElementsByTagName("input")[0].value
 	console.log('Newtoken:', form.getElementsByTagName("input")[0].value)
 
-	form.addEventListener('submit', function(e){
+	form.addEventListener('submit', function (e) {
 		e.preventDefault()
 		console.log('Form submitted...')
 		document.getElementById('form-button').classList.add('hidden')
 		document.getElementById('payment-info').classList.remove('hidden')
-		})
+	})
 
-	document.getElementById('make-payment').addEventListener('click', function(e){
+	document.getElementById('make-payment').addEventListener('click', function (e) {
 		submitFormData()
 	})
-	
-	function submitFormData(){
+
+	function submitFormData() {
 		console.log('Payment Button Clicked')
 
 		var userFormData = {
-			'name':null,
-			'email':null,
-			'total':total,
+			'name': null,
+			'email': null,
+			'total': total,
 		}
 
 		var shippingInfo = {
-			'address':null,
-			'city':null,
-			'state':null,
-			'zipcode':null,
+			'address': null,
+			'city': null,
+			'state': null,
+			'zipcode': null,
 		}
 
-		if(shipping != 'False'){
+		if (shipping != 'False') {
 			shippingInfo.address = form.address.value
 			shippingInfo.city = form.city.value
 			shippingInfo.state = form.state.value
 			shippingInfo.zipcode = form.zipcode.value
 		}
 
-		if(user == 'AnonymousUser'){
+		if (user == 'AnonymousUser') {
 			userFormData.name = form.name.value
 			userFormData.email = form.email.value
 
@@ -144,24 +242,24 @@
 
 		var url = '/processOrder/'
 		fetch(url, {
-			method:'POST',
-			headers:{
-			'Content-Type':'application/json',
-			'X-CSRFToken': csrftoken,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-CSRFToken': csrftoken,
 			},
-			body: JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
-    	})
-
-    	.then((response) => response.json())
-
-		.then((data) => {
-			console.log('Success:', data);
-			alert('Transaction completed');
-
-		cart = {}
-		document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
-			window.location.href = "{% url 'store' %}"
+			body: JSON.stringify({ 'form': userFormData, 'shipping': shippingInfo }),
 		})
+
+			.then((response) => response.json())
+
+			.then((data) => {
+				console.log('Success:', data);
+				alert('Transaction completed');
+
+				cart = {}
+				document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+				window.location.href = "{% url 'store' %}"
+			})
 	}
 </script>
 {% endblock content %}

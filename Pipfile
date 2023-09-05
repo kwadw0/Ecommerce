@@ -11,6 +11,7 @@ pillow = "*"
 pytz = "*"
 sqlparse = "*"
 django-compressor = "*"
+django-admin-tailwind = "*"
 
 [dev-packages]
 
