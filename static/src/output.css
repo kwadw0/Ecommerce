@@ -1375,6 +1375,10 @@ input:checked + .toggle-bg {
   max-width: 20rem;
 }
 
+.max-w-lg {
+  max-width: 32rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2202,6 +2206,10 @@ input:checked + .toggle-bg {
   left: 0px;
 }
 
+.peer:focus ~ .peer-focus\:start-0 {
+  inset-inline-start: 0px;
+}
+
 .peer:focus ~ .peer-focus\:-translate-y-6 {
   --tw-translate-y: -1.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2224,6 +2232,15 @@ input:checked + .toggle-bg {
 
 :is([dir="rtl"] .rtl\:space-x-reverse) > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
+}
+
+:is([dir="rtl"] .peer:focus ~ .rtl\:peer-focus\:left-auto) {
+  left: auto;
+}
+
+:is([dir="rtl"] .peer:focus ~ .rtl\:peer-focus\:translate-x-1\/4) {
+  --tw-translate-x: 25%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 :is(.dark .dark\:border-blue-500) {
